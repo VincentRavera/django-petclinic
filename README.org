@@ -11,10 +11,10 @@
 ** Model architecture
 The following table represents object from the model [[./petshop/models.py]]
 #+name: model-node-graph
-| node       | label      | shape | fillcolor |
-|------------+------------+-------+-----------|
-| Animal     | Animal     |       | green     |
-| Owner      | Owner      |       | yellow    |
+| node   | label   | shape | fillcolor |
+|--------+---------+-------+-----------|
+| Animal | Animal  |       | green     |
+| Owner  | Owner   |       | yellow    |
 
 The following table represents the relations of the model [[./petshop/models.py]]
 #+name: model-relation-graph
@@ -26,6 +26,9 @@ The following table represents the relations of the model [[./petshop/models.py]
 
 #+RESULTS:
 [[file:image/model.dot.png]]
+
+[[./image/model.dot.png]]
+
 
 * ORG - Misc
 ** Readme Dependencies
