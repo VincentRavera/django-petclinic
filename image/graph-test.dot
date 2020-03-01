@@ -1,0 +1,7 @@
+digraph {
+	Animal [label=Animal color=green shape=square style=filled]
+	RendezVous [label=RendezVous color=red shape=square style=filled]
+	Owner [label=Owner color=yellow shape=square style=filled]
+	Owner -> Animal [label="n:n"]
+	Owner -> RendezVous [label="1:n"]
+}

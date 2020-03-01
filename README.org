@@ -1,0 +1,126 @@
+#+TITLE: Petshop Readme
+
+* Petshop
+** Introduction
+** Check-List
+*** TODO Init README
+- State "TODO"       from              [2020-03-01 dim. 14:15]
+*** TODO Tag a bare-bone petshop
+- State "TODO"       from              [2020-03-01 dim. 14:15]
+** Model architecture
+The following table represents object from the model [[./petshop/models.py]]
+#+name: model-node-graph
+| node       | label      | shape | fillcolor |
+|------------+------------+-------+-----------|
+| Animal     | Animal     |       | green     |
+| RendezVous | RendezVous |       | red       |
+| Owner      | Owner      |       | yellow    |
+
+The following table represents the relations of the model [[./petshop/models.py]]
+#+name: model-relation-graph
+| from  | label | to         |
+|-------+-------+------------|
+| Owner | 1:N   | Animal     |
+| Owner | 1:N   | RendezVous |
+
+#+CALL: generate_graph[:var output="image/model.dot" :var nodes=model-node-graph :var relations=model-relation-graph :results file ]
+
+#+RESULTS:
+[[file:image/model.dot.png]]
+
+* ORG - Misc
+** Readme Dependencies
+- graphviz
+- maplotlib
+** Org-mode graph test
+*** Plot
+The following code will generate and import a matplotlib simple plot:
+#+BEGIN_SRC python :var nodes=model-node-graph :var relations=model-relation-graph :results file
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+
+a=[1,2,3,5,4]
+b=[1,2,3,4,5]
+
+plt.plot(a)
+plt.plot(b)
+plt.savefig('image/simple.png')
+plt.close()
+return('./image/simple.png')
+#+END_SRC
+
+#+RESULTS:
+[[file:./image/simple.png]]
+*** Read table
+The following table will be read by the code bellow and output only one element:
+#+name: test-table
+| a | b | c | d | e |
+|---+---+---+---+---|
+| 1 | 2 | 3 | 4 | 5 |
+| 0 | 9 | 8 | 7 | 6 |
+
+
+#+BEGIN_SRC python :var table=test-table
+return(table[1][2])
+#+END_SRC
+
+#+RESULTS:
+: 8
+*** Graphviz example
+The following code will apply the tutorial of python-graphviz, generate an
+image, import it
+#+BEGIN_SRC python :results file
+from graphviz import Digraph
+
+dot = Digraph()
+
+dot.node('A', 'King Arthur')
+dot.node('B', 'Sir Bedevere the Wise')
+dot.node('L', 'Sir Lancelot the Brave')
+
+dot.edges(['AB', 'AL'])
+dot.edge('B', 'L', constraint='false')
+
+dot.render('image/graph.dot', format='png')
+
+return('image/graph.dot.png')
+#+END_SRC
+
+#+RESULTS:
+[[file:image/graph.dot.png]]
+*** Read table to Graph
+The following table describes nodes for graphiz
+#+name: test-node
+| node       | label      | shape  | fillcolor |
+|------------+------------+--------+-----------|
+| Animal     | Animal     | square | green     |
+| RendezVous | RendezVous | square | red       |
+| Owner      | Owner      | square | yellow    |
+
+The following table describes relations to the nodes.
+#+name: test-relation
+| from  | label | to         |
+|-------+-------+------------|
+| Owner | n:n   | Animal     |
+| Owner | 1:n   | RendezVous |
+
+The following code will draw a graph from the previous tables.
+#+NAME: generate_graph
+#+BEGIN_SRC python :var output="image/graph-test.dot" :var nodes=test-node :var relations=test-relation :results file
+from graphviz import Digraph
+
+dot = Digraph()
+
+for node in nodes:
+    dot.node(node[0], node[1], shape=node[2], style='filled', color=node[3])
+
+for relation in relations:
+    dot.edge(relation[0], relation[2], label=relation[1])
+
+dot.render(output, format='png')
+return(output + '.png')
+#+END_SRC
+
+#+RESULTS: generate_graph
+[[file:image/graph-test.dot.png]]
