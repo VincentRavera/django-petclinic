@@ -1,0 +1,8 @@
+{% if owner %}
+  <h1>{{ owner.name }}</h1>
+  {% for animal in animal_list %}
+    <li>{{animal.name}}</li>
+    {% endfor %}
+{% else %}
+  <p>No owner id</p>
+{% endif %}
