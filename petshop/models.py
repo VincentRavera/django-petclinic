@@ -26,7 +26,3 @@ class Animal(models.Model):
 
     def __str__(self):
         return self.name
-
-class RendezVous(models.Model):
-    owner = models.ForeignKey(Owner, on_delete=models.CASCADE)
-    date = models.DateTimeField('Appointement')

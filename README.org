@@ -3,7 +3,8 @@
 * Petshop
 ** Introduction
 ** Check-List
-*** TODO Init README
+*** DONE Init README
+- State "DONE"       from "TODO"       [2020-03-01 dim. 23:36]
 - State "TODO"       from              [2020-03-01 dim. 14:15]
 *** TODO Tag a bare-bone petshop
 - State "TODO"       from              [2020-03-01 dim. 14:15]
@@ -13,15 +14,13 @@ The following table represents object from the model [[./petshop/models.py]]
 | node       | label      | shape | fillcolor |
 |------------+------------+-------+-----------|
 | Animal     | Animal     |       | green     |
-| RendezVous | RendezVous |       | red       |
 | Owner      | Owner      |       | yellow    |
 
 The following table represents the relations of the model [[./petshop/models.py]]
 #+name: model-relation-graph
-| from  | label | to         |
-|-------+-------+------------|
-| Owner | 1:N   | Animal     |
-| Owner | 1:N   | RendezVous |
+| from       | label | to         |
+|------------+-------+------------|
+| Owner      | 1:N   | Animal     |
 
 #+CALL: generate_graph[:var output="image/model.dot" :var nodes=model-node-graph :var relations=model-relation-graph :results file ]
 

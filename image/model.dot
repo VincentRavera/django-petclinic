@@ -1,7 +1,5 @@
 digraph {
 	Animal [label=Animal color=green shape="" style=filled]
-	RendezVous [label=RendezVous color=red shape="" style=filled]
 	Owner [label=Owner color=yellow shape="" style=filled]
 	Owner -> Animal [label="1:N"]
-	Owner -> RendezVous [label="1:N"]
 }
