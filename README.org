@@ -1,12 +1,10 @@
-#+TITLE: Petshop Readme
-
 * Petshop
 ** Introduction
 ** Check-List
-*** DONE Init README
-*** DONE Tag a bare-bone petshop
-*** TODO Generic views
-*** TODO Complexify model
+- [X] Init README
+- [X] Tag a bare-bone petshop
+- [ ] Generic views
+- [ ] Complexify model
 ** Model architecture
 The following table represents object from the model [[./petshop/models.py]]
 #+name: model-node-graph
@@ -29,7 +27,7 @@ The following table represents the relations of the model [[./petshop/models.py]
 [[./image/model.dot.png]]
 
 ** Routes
-The following list represents routes described in [[./petshop/models.py]]
+The following list represents routes described in [[./petshop/urls.py]]
 - ~petshop~ index view
 - ~petshop/owner/~ owner list view
 - ~petshop/owner/x~ owner detail view
@@ -37,6 +35,8 @@ The following list represents routes described in [[./petshop/models.py]]
 - ~petshop/anmal/x~ owner detail view
 
 * ORG - Misc
+This section, helps to generate graphics for models, does not concerns the
+application itself, please, ignore.
 ** Readme Dependencies
 - graphviz
 - maplotlib
