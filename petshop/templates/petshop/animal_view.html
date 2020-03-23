@@ -1,0 +1,5 @@
+<h1>{{ animal.name }}</h1>
+<ul>
+  <li>Sex: {{animal.sex}}</li>
+  <li>Owner: <a href="{% url 'petshop:owner' animal.owner.id %}">{{animal.owner.name}}</a> </li>
+</ul>

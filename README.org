@@ -4,10 +4,9 @@
 ** Introduction
 ** Check-List
 *** DONE Init README
-- State "DONE"       from "TODO"       [2020-03-01 dim. 23:36]
-- State "TODO"       from              [2020-03-01 dim. 14:15]
-*** TODO Tag a bare-bone petshop
-- State "TODO"       from              [2020-03-01 dim. 14:15]
+*** DONE Tag a bare-bone petshop
+*** TODO Generic views
+*** TODO Complexify model
 ** Model architecture
 The following table represents object from the model [[./petshop/models.py]]
 #+name: model-node-graph
@@ -29,6 +28,13 @@ The following table represents the relations of the model [[./petshop/models.py]
 
 [[./image/model.dot.png]]
 
+** Routes
+The following list represents routes described in [[./petshop/models.py]]
+- ~petshop~ index view
+- ~petshop/owner/~ owner list view
+- ~petshop/owner/x~ owner detail view
+- ~petshop/anmal/~ animal list view
+- ~petshop/anmal/x~ owner detail view
 
 * ORG - Misc
 ** Readme Dependencies
