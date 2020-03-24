@@ -1,11 +1,13 @@
+{% extends 'petshop/base.html' %}
+{% block content %}
 {% if animal_list %}
-    <h1>Petshop:</h1>
-    <h3>Select an animal:</h3>
-    <ul>
+<h3>Select an animal:</h3>
+<ul>
     {% for animal in animal_list %}
-        <li><a href="{% url 'petshop:animal' animal.id %}">{{ animal.name }}</a></li>
+    <li><a href="{% url 'petshop:animal' animal.id %}">{{ animal.name }}</a></li>
     {% endfor %}
-    </ul>
+</ul>
 {% else %}
-    <p>No Animals are available.</p>
+<p>No Animals are available.</p>
 {% endif %}
+{% endblock %}

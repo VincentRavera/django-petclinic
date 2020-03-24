@@ -1,3 +1,6 @@
+{% extends 'petshop/base.html' %}
+{% block content %}
+
 {% if owner %}
   <h1>{{ owner.name }}</h1>
   <h2>List of pets:</h2>
@@ -7,3 +10,4 @@
 {% else %}
   <p>No owner id</p>
 {% endif %}
+{% endblock %}

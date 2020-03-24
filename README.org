@@ -4,8 +4,11 @@
 - [X] Init README
 - [X] Tag a bare-bone petshop
 - [X] Generic views
+- [-] CSS
+  - [X] "Rudimentary"
+  - [ ] "Usefullness"
+  - [ ] "Beauty"
 - [ ] Complexify model
-- [ ] CSS ...
 - [ ] Form to add data
 ** Model architecture
 The following table represents object from the model [[./petshop/models.py]]

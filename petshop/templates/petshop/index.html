@@ -1,3 +1,9 @@
-<h1>Petshop</h1>
-<h2><a href="{% url 'petshop:owners' %}">Owner-list</a></h2>
-<h2><a href="{% url 'petshop:animals' %}">Animals-list</a></h2>
+{% extends 'petshop/base.html' %}
+{% block content %}
+<h2>
+  <ul>
+    <li><a href="{% url 'petshop:owners' %}">Owner-list</a></li>
+    <li><a href="{% url 'petshop:animals' %}">Animals-list</a></li>
+  </ul>
+</h2>
+{% endblock %}

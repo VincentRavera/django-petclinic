@@ -1,11 +1,13 @@
+{% extends 'petshop/base.html' %}
+{% block content %}
 {% if owner_list %}
-    <h1>Petshop:</h1>
-    <h3>Select a client:</h3>
-    <ul>
+<h3>Select a client:</h3>
+<ul>
     {% for owner in owner_list %}
-        <li><a href="{% url 'petshop:owner' owner.id %}">{{ owner.name }}</a></li>
+    <li><a href="{% url 'petshop:owner' owner.id %}">{{ owner.name }}</a></li>
     {% endfor %}
-    </ul>
+</ul>
 {% else %}
-    <p>No Customes are available.</p>
+<p>No Customes are available.</p>
 {% endif %}
+{% endblock %}
