@@ -14,21 +14,27 @@ class IndexView(generic.ListView):
         """Returns all Owner"""
         return Owner.objects.all()
 
+class OwnerView(generic.ListView):
+    template_name = 'petshop/owner_list.html'
+    context_object_name = 'owner_list'
 
-def owner_list(request):
-    owners = Owner.objects.all()
-    return render(request, 'petshop/owner_list.html', {'owner_list': owners})
+    def get_queryset(self):
+        "Returns all Owner"
+        return Owner.objects.all()
 
 
-def owner_view(request, pk):
-    owner = get_object_or_404(Owner, pk=pk)
-    animals = owner.animal_set.all()
-    return render(request, 'petshop/owner_view.html', {'owner': owner, 'animals_list': animals})
+class OwnerDetail(generic.DetailView):
+    template_name = 'petshop/owner_view.html'
+    model = Owner
 
-def animal_view(request, pk):
-    animal = get_object_or_404(Animal, pk=pk)
-    return render(request, 'petshop/animal_view.html', {'animal': animal})
 
-def animal_list(request):
-    animals = Animal.objects.all()
-    return render(request, 'petshop/animal_list.html', {'animal_list': animals})
+class AnimalView(generic.ListView):
+    template_name = 'petshop/animal_list.html'
+    context_object_name = 'animal_list'
+
+    def get_queryset(self):
+        return Animal.objects.all()
+
+class AnimalDetail(generic.DetailView):
+    template_name = 'petshop/animal_view.html'
+    model = Animal

@@ -8,15 +8,15 @@ urlpatterns = [
     # /petshop/owner
     path('', views.IndexView.as_view(), name='index'),
     # List owners
-    path('owner', views.owner_list, name='owners'),
+    path('owner', views.OwnerView.as_view(), name='owners'),
 
     # /petshop/owner/5
-    path('owner/<int:pk>', views.owner_view, name='owner'),
+    path('owner/<int:pk>', views.OwnerDetail.as_view(), name='owner'),
 
     # /petshop/animal
-    path('animal', views.animal_list, name='animals'),
+    path('animal', views.AnimalView.as_view(), name='animals'),
 
     # /petshop/animal/7
-    path('animal/<int:pk>', views.animal_view, name='animal'),
+    path('animal/<int:pk>', views.AnimalDetail.as_view(), name='animal'),
 
 ]

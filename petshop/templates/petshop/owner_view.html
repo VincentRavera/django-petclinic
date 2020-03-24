@@ -1,7 +1,7 @@
 {% if owner %}
   <h1>{{ owner.name }}</h1>
   <h2>List of pets:</h2>
-  {% for animal in animals_list %}
+  {% for animal in owner.animal_set.all %}
   <li><a href="{% url 'petshop:animal' animal.id %}">{{animal.name}}</a></li>
     {% endfor %}
 {% else %}
