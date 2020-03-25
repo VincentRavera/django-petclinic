@@ -2,7 +2,7 @@
 
 from django.db import migrations, models
 import django.db.models.deletion
-import petshop.models
+import petclinic.models
 
 
 class Migration(migrations.Migration):
@@ -26,8 +26,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=50)),
-                ('sex', models.IntegerField(choices=[(0, 'UNKNOWN'), (1, 'FEMALE'), (2, 'MALE')], default=petshop.models.Sex['UNKNOWN'])),
-                ('owner', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='petshop.Owner')),
+                ('sex', models.IntegerField(choices=[(0, 'UNKNOWN'), (1, 'FEMALE'), (2, 'MALE')], default=petclinic.models.Sex['UNKNOWN'])),
+                ('owner', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='petclinic.Owner')),
             ],
         ),
     ]

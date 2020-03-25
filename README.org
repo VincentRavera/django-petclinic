@@ -1,21 +1,31 @@
-* Petshop
+* PetClinic
 ** Introduction
+This is a pet clinic app to test the django framework
 ** Check-List
 - [X] Init README
-- [X] Tag a bare-bone petshop
+- [X] Tag a bare-bone petclinic
 - [X] Generic views
+- [-] CSS
+  - [X] "Rudimentary"
+  - [ ] "Usefullness"
+  - [ ] "Beauty"
 - [ ] Complexify model
-- [ ] CSS ...
-- [ ] Form to add data
+- [-] Form to add data
+  - [X] Create owner
+  - [X] Delete owner
+  - [ ] Update owner
+  - [ ] Create animal
+  - [ ] Delete animal
+  - [ ] Update animal
 ** Model architecture
-The following table represents object from the model [[./petshop/models.py]]
+The following table represents object from the model [[./petclinic/models.py]]
 #+name: model-node-graph
 | node   | label   | shape | fillcolor |
 |--------+---------+-------+-----------|
 | Animal | Animal  |       | green     |
 | Owner  | Owner   |       | yellow    |
 
-The following table represents the relations of the model [[./petshop/models.py]]
+The following table represents the relations of the model [[./petclinic/models.py]]
 #+name: model-relation-graph
 | from       | label | to         |
 |------------+-------+------------|
@@ -29,12 +39,14 @@ The following table represents the relations of the model [[./petshop/models.py]
 [[./image/model.dot.png]]
 
 ** Routes
-The following list represents routes described in [[./petshop/urls.py]]
-- ~petshop~ index view
-- ~petshop/owner/~ owner list view
-- ~petshop/owner/x~ owner detail view
-- ~petshop/anmal/~ animal list view
-- ~petshop/anmal/x~ owner detail view
+The following list represents routes described in [[./petclinic/urls.py]]
+- ~petclinic~ index view
+- ~petclinic/owner/~ owner list view
+- ~petclinic/owner/x~ owner detail view
+- ~petclinic/owner/x/delete~ owner delete view
+- ~petclinic/owner/create~ owner create view
+- ~petclinic/anmal/~ animal list view
+- ~petclinic/anmal/x~ owner detail view
 
 * ORG - Misc
 This section, helps to generate graphics for models, does not concerns the
