@@ -9,7 +9,13 @@
   - [ ] "Usefullness"
   - [ ] "Beauty"
 - [ ] Complexify model
-- [ ] Form to add data
+- [-] Form to add data
+  - [X] Create owner
+  - [X] Delete owner
+  - [ ] Update owner
+  - [ ] Create animal
+  - [ ] Delete animal
+  - [ ] Update animal
 ** Model architecture
 The following table represents object from the model [[./petshop/models.py]]
 #+name: model-node-graph
