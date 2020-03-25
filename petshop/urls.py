@@ -13,6 +13,13 @@ urlpatterns = [
     # /petshop/owner/5
     path('owner/<int:pk>', views.OwnerDetail.as_view(), name='owner'),
 
+    # /petshop/owner/create
+    path('owner/create', views.OwnerCreate.as_view(), name='ownercreate'),
+
+    # /petshop/owner/delete
+    path('owner/<int:pk>/delete', views.OwnerDelete.as_view(), name='ownerdelete'),
+    # url(r'^owner/(?P<pk>\d+)/delete/$', views.OwnerDelete.as_view(), name='ownerdelete'),
+
     # /petshop/animal
     path('animal', views.AnimalView.as_view(), name='animals'),
 

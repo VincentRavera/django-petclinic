@@ -1,5 +1,4 @@
-from django.shortcuts import render, get_object_or_404, HttpResponse
-from django.urls import reverse
+from django.urls import reverse_lazy
 from django.views import generic
 
 from .models import Owner, Animal
@@ -28,12 +27,23 @@ class OwnerDetail(generic.DetailView):
     model = Owner
 
 
+class OwnerCreate(generic.CreateView):
+    model = Owner
+    fields = ['name', 'number']
+
+
+class OwnerDelete(generic.DeleteView):
+    model = Owner
+    success_url = reverse_lazy('petshop:owners')
+
+
 class AnimalView(generic.ListView):
     template_name = 'petshop/animal_list.html'
     context_object_name = 'animal_list'
 
     def get_queryset(self):
         return Animal.objects.all()
+
 
 class AnimalDetail(generic.DetailView):
     template_name = 'petshop/animal_view.html'
