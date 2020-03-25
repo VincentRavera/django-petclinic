@@ -7,7 +7,7 @@ This is a pet clinic app to test the django framework
 - [X] Generic views
 - [-] Tests
   - [X] Tests U
-  - [ ] Set-up Continuous integration
+  - [-] Set-up Continuous integration
 - [-] CSS
   - [X] "Rudimentary"
   - [ ] "Usefullness"
@@ -20,6 +20,7 @@ This is a pet clinic app to test the django framework
   - [ ] Create animal
   - [ ] Delete animal
   - [ ] Update animal
+- [ ] Clean requirements
 ** Model architecture
 The following table represents object from the model [[./petclinic/models.py]]
 #+name: model-node-graph
