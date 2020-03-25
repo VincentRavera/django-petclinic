@@ -1,0 +1,9 @@
+{% extends 'petclinic/base.html' %}
+{% block content %}
+<h2>
+  <ul>
+    <li><a href="{% url 'petclinic:owners' %}">Owner-list</a></li>
+    <li><a href="{% url 'petclinic:animals' %}">Animals-list</a></li>
+  </ul>
+</h2>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends 'petclinic/base.html' %}
+{% block content %}
+<h2>{{ animal.name }}</h2>
+<ul>
+  <li>Sex: {{animal.sex}}</li>
+  <li>Owner: <a href="{% url 'petclinic:owner' animal.owner.id %}">{{animal.owner.name}}</a> </li>
+</ul>
+{% endblock %}

@@ -1,10 +1,10 @@
-{% extends 'petshop/base.html' %}
+{% extends 'petclinic/base.html' %}
 {% block content %}
 {% if animal_list %}
 <h3>Select an animal:</h3>
 <ul>
     {% for animal in animal_list %}
-    <li><a href="{% url 'petshop:animal' animal.id %}">{{ animal.name }}</a></li>
+    <li><a href="{% url 'petclinic:animal' animal.id %}">{{ animal.name }}</a></li>
     {% endfor %}
 </ul>
 {% else %}

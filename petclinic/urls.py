@@ -3,27 +3,27 @@ from django.urls import path
 
 from . import views
 
-app_name="petshop"
+app_name="petclinic"
 urlpatterns = [
-    # /petshop/owner
+    # /petclinic/owner
     path('', views.IndexView.as_view(), name='index'),
     # List owners
     path('owner', views.OwnerView.as_view(), name='owners'),
 
-    # /petshop/owner/5
+    # /petclinic/owner/5
     path('owner/<int:pk>', views.OwnerDetail.as_view(), name='owner'),
 
-    # /petshop/owner/create
+    # /petclinic/owner/create
     path('owner/create', views.OwnerCreate.as_view(), name='ownercreate'),
 
-    # /petshop/owner/delete
+    # /petclinic/owner/delete
     path('owner/<int:pk>/delete', views.OwnerDelete.as_view(), name='ownerdelete'),
     # url(r'^owner/(?P<pk>\d+)/delete/$', views.OwnerDelete.as_view(), name='ownerdelete'),
 
-    # /petshop/animal
+    # /petclinic/animal
     path('animal', views.AnimalView.as_view(), name='animals'),
 
-    # /petshop/animal/7
+    # /petclinic/animal/7
     path('animal/<int:pk>', views.AnimalDetail.as_view(), name='animal'),
 
 ]

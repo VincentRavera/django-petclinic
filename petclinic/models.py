@@ -21,7 +21,7 @@ class Owner(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('petshop:owner', kwargs={'pk': self.pk})
+        return reverse('petclinic:owner', kwargs={'pk': self.pk})
 
 class Animal(models.Model):
     owner = models.ForeignKey(Owner, on_delete=models.CASCADE)
