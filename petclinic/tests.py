@@ -1,5 +1,8 @@
 from django.test import TestCase
-from .models import Owner, Animal, RendezVous
+from django.urls import reverse
+from django.core.exceptions import ObjectDoesNotExist
+
+from .models import Owner, Animal
 
 # Create your tests here.
 
@@ -21,15 +24,6 @@ def create_animal(name, number):
     animal = Animal.objects.create(name=name, number=number)
     animals_created.append(animal)
     return animal
-rendezVouss_created = []
-def create_rendezVous(name, number):
-    """
-    Create an RendezVous with the given `name` and his phone `number`.
-    """
-    rendezVous = RendezVous.objects.create(name=name, number=number)
-    rendezVouss_created.append(rendezVous)
-    return rendezVous
-
 def clean_owners():
     for owner in owners_created:
         owner.delete()
@@ -38,20 +32,35 @@ def clean_animals():
     for animal in animals_created:
         animal.delete()
 
-def clean_rendezVouss():
-    for rendezVous in rendezVouss_created:
-        rendezVous.delete()
-
 def clean_data():
     clean_owners()
     clean_animals()
-    clean_rendezVouss()
 # Views Tests
+class OwnerViewTests(TestCase):
 
-# Models test
-class OwnerModelTests(TestCase):
-    pass
-class AnimalModelTests(TestCase):
-    pass
-class RendezVousModelTests(TestCase):
-    pass
+    def test_create(self):
+        create_url = reverse('petclinic:ownercreate')
+        post_data = {
+            'name': 'foo',
+            'number': '0',
+        }
+        response = self.client.post(create_url, data=post_data)
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(Owner.objects.filter(name=post_data['name']).count(), 1)
+        owner = Owner.objects.filter(name=post_data['name'])[0]
+        self.assertEqual(owner.number, post_data['number'])
+
+    def test_delete(self):
+        name = 'foo'
+        number = "0"
+        owner = Owner(name=name, number=number)
+        owner.save()
+        delete_url = reverse('petclinic:ownerdelete', args=(owner.id,))
+        response = self.client.post(delete_url)
+        self.assertEqual(response.status_code, 302)
+        is_deleted = False
+        try:
+            Owner.objects.get(id=owner.id)
+        except ObjectDoesNotExist:
+            is_deleted = True
+        self.assertTrue(is_deleted, "Was not deleted")

@@ -5,6 +5,9 @@ This is a pet clinic app to test the django framework
 - [X] Init README
 - [X] Tag a bare-bone petclinic
 - [X] Generic views
+- [-] Tests
+  - [X] Tests U
+  - [ ] Set-up Continuous integration
 - [-] CSS
   - [X] "Rudimentary"
   - [ ] "Usefullness"
