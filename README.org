@@ -42,6 +42,8 @@ The following list represents routes described in [[./petshop/urls.py]]
 - ~petshop~ index view
 - ~petshop/owner/~ owner list view
 - ~petshop/owner/x~ owner detail view
+- ~petshop/owner/x/delete~ owner delete view
+- ~petshop/owner/create~ owner create view
 - ~petshop/anmal/~ animal list view
 - ~petshop/anmal/x~ owner detail view
 
